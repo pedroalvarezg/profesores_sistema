@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Editar reporte de avance para {{ profesor }}</h1>
+<form method="post">
+  {% csrf_token %}
+  <table>
+    <thead>
+      <tr>
+        <th>Tema</th>
+        <th>Completado</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for tema in temas %}
+      <tr>
+        <td>{{ tema.nombre }}</td>
+        <td><input type="checkbox" name="tema_{{ tema.pk }}" {% if profesor.temas_vistos.filter(pk=tema.pk) %}checked{% endif %}></td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <button type="submit">Guardar cambios</button>
+</form>
+{% endblock %}

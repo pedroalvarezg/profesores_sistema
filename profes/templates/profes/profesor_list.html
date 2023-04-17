@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block title %}Lista de Profesores{% endblock %}
+
+{% block content %}
+
+<h1>Lista de Profesores</h1>
+
+<a href="{% url 'profesor_create' %}">Agregar profesor</a>
+
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre(s)</th>
+            <th>Apellidos</th>
+            <th>Email</th>
+            <th>Materia</th>
+            <th>Grupo</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for profesor in profesores %}
+        <tr>
+            <td>{{ profesor.id }}</td>
+            <td>{{ profesor.nombres }}</td>
+            <td>{{ profesor.apellidos }}</td>
+            <td>{{ profesor.email }}</td>
+            <td>{{ profesor.materia }}</td>
+            <td>{{ profesor.grupo }}</td>
+            <td>
+                <a href="{% url 'profesor_update' profesor.id %}">Editar</a>
+                <a href="{% url 'profesor_delete' profesor.id %}">Eliminar</a>
+            </td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="7">No hay profesores registrados</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}

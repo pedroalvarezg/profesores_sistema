@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Registro de profesores</h1>
+<table>
+  <thead>
+    <tr>
+      <th>ID profesor</th>
+      <th>Nombre(s)</th>
+      <th>Apellidos</th>
+      <th>Email</th>
+      <th>Materia</th>
+      <th>Grupo</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for profesor in profesores %}
+    <tr>
+      <td>{{ profesor.pk }}</td>
+      <td>{{ profesor.nombre }}</td>
+      <td>{{ profesor.apellidos }}</td>
+      <td>{{ profesor.email }}</td>
+      <td>{{ profesor.materia }}</td>
+      <td>{{ profesor.grupo }}</td>
+      <td><a href="{% url 'editar_reporte_avance' profesor.pk %}">Editar</a></td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}
