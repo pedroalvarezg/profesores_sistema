@@ -12,7 +12,7 @@ def editar_reporte(request, matricula, grupo):
     except ValueError:
         return render(request, 'profes/error.html', {'mensaje': 'La matrícula del profesor debe ser un número entero'})
 
-    profesor = get_object_or_404(Profesor, pk=matricula, grupo = grupo)
+    profesor = Profesor.objects.filter(matricula=matricula, grupo=grupo).first()
     temas = Tema.objects.filter(materia=profesor.materia)
 
     if request.method == 'POST':
