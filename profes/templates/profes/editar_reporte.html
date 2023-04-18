@@ -39,7 +39,7 @@
       </nav>
     <div class="container-fluid">
         <h1>Editar reporte de avance</h1>
-        <form method="POST" action="{% url 'editar_reporte' profesor.pk %}">
+        <form method="POST" action="{% url 'editar_reporte' profesor.matricula profesor.grupo %}">
         {% csrf_token %}
         <p><strong>Profesor:</strong> {{ profesor.nombre }}<strong>; ID:</strong> {{ profesor.matricula }} </p>
         <p><strong>Materia:</strong> {{ profesor.materia.nombre }} </p>

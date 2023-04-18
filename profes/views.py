@@ -5,14 +5,14 @@ def index(request):
     profesores = Profesor.objects.all()
     return render(request, 'profes/index.html', {'profesores': profesores})
 
-def editar_reporte(request, semestre, grupo):
-    print(semestre)
+def editar_reporte(request, matricula, grupo):
+    print(matricula)
     try:
-        semestre = int(semestre)
+        matricula = int(matricula)
     except ValueError:
         return render(request, 'profes/error.html', {'mensaje': 'La matrícula del profesor debe ser un número entero'})
 
-    profesor = get_object_or_404(Profesor, pk=semestre)
+    profesor = get_object_or_404(Profesor, pk=matricula, grupo = grupo)
     temas = Tema.objects.filter(materia=profesor.materia)
 
     if request.method == 'POST':
