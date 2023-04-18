@@ -72,7 +72,7 @@
                                             <td>{{ profesor.materia }}</td>
                                             <td>{{ profesor.grupo }}</td>
                                             <td>
-                                              <a class= "btn btn-warning" href= "{% url 'editar_reporte' profesor.semestre %}">
+                                              <a class= "btn btn-warning" href= "{% url 'editar_reporte' profesor.semestre profesor.grupo %}">
                                                 <i class="fa-solid fa-pen-to-square fa-lg"></i> 
                                               </a>
                                             </td>

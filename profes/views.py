@@ -5,7 +5,7 @@ def index(request):
     profesores = Profesor.objects.all()
     return render(request, 'profes/index.html', {'profesores': profesores})
 
-def editar_reporte(request, semestre):
+def editar_reporte(request, semestre, grupo):
     print(semestre)
     try:
         semestre = int(semestre)
