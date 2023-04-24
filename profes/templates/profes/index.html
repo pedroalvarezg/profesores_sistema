@@ -59,6 +59,7 @@
                                     <th scope="col">Email</th>
                                     <th scope="col">Materia</th>
                                     <th scope="col">Grupo</th>
+                                    <th scope="col">Avance</th>
                                     <th scope="col">Acciones</th>
                                   </tr>
                                 </thead>
@@ -71,6 +72,7 @@
                                             <td>{{ profesor.email }}</td>
                                             <td>{{ profesor.materia }}</td>
                                             <td>{{ profesor.grupo }}</td>
+                                            <td>{{ profesor.porcentaje_avance }}%</td>
                                             <td>
                                               <a class= "btn btn-warning" href= "{% url 'editar_reporte' profesor.matricula profesor.grupo %}">
                                                 <i class="fa-solid fa-pen-to-square fa-lg"></i> 
