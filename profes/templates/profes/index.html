@@ -18,21 +18,10 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarColor01">
             <ul class="navbar-nav me-auto">
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                    <i class="fa-solid fa-list fa-lg"></i> Todos los profesores
-
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                    <i class="fa-solid fa-plus fa-lg"></i> Añadir Profesores
-
-                </a>
+              <img src="https://www.uanl.mx/wp-content/uploads/2020/08/Escudo-UANL-color.png" alt="UANL LOGO" style="width:214.5px;height:97.5px;">
             </ul>
             <form class="d-flex">
-              <input class="form-control me-sm-2" type="search" placeholder="Search">
-              <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+              <img src="https://pbs.twimg.com/profile_images/1332376553/FCFM.png" alt="FCFM LOGO" style="width:80px;height:80px;">
             </form>
           </div>
         </div>
@@ -46,6 +35,7 @@
                     <div class="card-header">
                         <i class="fa-solid fa-list fa-lg"></i> Registro de profesores
                     </div>
+                    <a class="btn btn-success" href="{% url 'descargar_reportes' %}">Descargar todos los reportes</a>
                     <div class="card-body">
 
                       <p class="card-text">
@@ -83,6 +73,7 @@
                              
                                 </tbody>
                               </table>
+                              
                         </div>
                       </p>
                     </div>
