@@ -105,3 +105,13 @@ def descargar_reportes(request):
     response = HttpResponse(zip_file.getvalue(), content_type='application/x-zip-compressed')
     response['Content-Disposition'] = 'attachment; filename=reportes.zip'
     return response
+
+
+def restaurar_reportes(request):
+    temas = Tema.objects.all()
+    for tema in temas:
+        profesores = Profesor.objects.filter(materia=tema.materia)
+        for profesor in profesores:
+            profesor.temas_vistos.remove(tema)
+    return redirect('index')
+
